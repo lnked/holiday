@@ -1,0 +1,169 @@
+.layout-header {
+	height: $header-height;
+	background-color: #fff;
+	position: relative;
+	z-index: 30;
+
+	&__phone {
+		color: #000;
+		font-size: 1.1rem;
+		font-weight: 400;
+		line-height: 2.1rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		position: absolute;
+		right: 30px;
+		top: 10px;
+		padding-top: 40px;
+		text-align: center;
+		background: url(../images/phone.png) 50% 0 no-repeat;
+	}
+
+	&__address {
+		position: absolute;
+		left: 260px;
+		top: 10px;
+		padding: 0 20px;
+		height: 3.2rem;
+		margin-top: 11px;
+		color: #3d3d3d;
+		font-weight: 400;
+		font-size: 1.5rem;
+		line-height: 3.5rem;
+		text-decoration: none;
+		cursor: pointer;
+		background-color: #000;
+		background-color: rgba(0, 0, 0, .11);
+
+		&__arrow {
+			line-height: 1;
+			padding-right: 20px;
+			display: inline-block;
+			vertical-align: middle;
+			background: url(../images/arr.png) 100% 2px no-repeat;
+			background-image: url(../images/arr.svg);
+			background-size: 5px 9px;
+		}
+	}
+
+	&__phone, &__address {
+		display: none;
+	}
+
+	&__backuri {
+		position: absolute;
+		top: 37px;
+		z-index: 10;
+		height: 2.4rem;
+		text-align: left;
+		float: left;
+		color: #000;
+		opacity: 0;
+		font-size: 1.4rem;
+		font-weight: 400;
+		line-height: 2.6rem;
+		text-decoration: none;
+		transition: opacity $time, transform $time;
+
+		&.active {
+			opacity: .44;
+			transform: translate3d(0, 0, 0);
+		}
+
+		&:before {
+			width: 34px;
+			height: 24px;
+			position: absolute;
+			top: 50%;
+			margin-top: -12px;
+			background-repeat: no-repeat;
+			background-image: url(../images/nav.png);
+			content: "";
+			opacity: .5;
+			transition: opacity $time;
+		}
+		
+		&:before {
+			background-position: 0 100%;
+		}
+
+		&:hover {
+			opacity: 1;
+
+			&:before {
+				opacity: 1;
+			}
+		}
+
+		&_forestry {
+			transform: translate3d(250px, 0, 0);
+			padding-left: 52px;
+			right: 50px;
+
+			&:before {
+				left: 0;
+			}
+		}
+
+		&_suschevsky {
+			transform: translate3d(-250px, 0, 0);
+			padding-right: 52px;
+			left: 50px;
+
+			&:before {
+				right: 0;
+				background-position: 100% 100%;
+			}
+		}
+	}
+	
+	&__logo {
+		position: absolute;
+		left: 50%;
+		top: 23px;
+		z-index: 10;
+		margin-left: -96px;
+	}
+	
+	&__lang {
+		height: 13px;
+		position: absolute;
+		right: 195px;
+		top: 50%;
+		z-index: 10;
+		padding-left: 30px;
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+		color: #000;
+		font-size: 1.1rem;
+		font-weight: 400;
+		line-height: 15px;
+		padding-left: 30px;
+		text-transform: uppercase;
+		text-decoration: none;
+		transform: translateY(-50%);
+
+		&.en {
+			background-image: url(../images/en.png);
+		}
+
+		&.ru {
+			background-image: url(../images/ru.png);
+		}
+
+		&__selected {
+			display: inline-block;
+			line-height: .8;
+			border-bottom: 2px solid #ccc;
+			transition: border-color $time;
+		}
+
+		&:hover &__selected {
+			border-color: $border-color;
+		}
+	}
+
+	&__about {
+		
+	}
+}

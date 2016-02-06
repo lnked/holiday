@@ -1,0 +1,79 @@
+@@include('./components/meta.html', {
+	"title": "Main"
+})
+
+<section class="layout-wrapper" itemprop="mainContentOfPage">
+	
+	<article class="side side_left" id="side-left">
+		
+		@@include('./components/header.html', {
+			"addclass": "_forestry",
+			"lang": false,
+			"about": false,
+			"phone": "+7 (495) 783 65 00",
+			"address": "г. Москва, ул. Лесная, 15",
+			"map_link": "dgTDAWHhv6XVIonArf2JOER-v5jyriW7",
+			"another_container": "#side-left",
+			"map_container": "#side-right"
+		})
+		
+		<div class="side__content side__content_forestry">
+			@@include('./components/footer.html', {
+				"header": "Холидей Инн Москва Лесная",
+				"phone": "+7 (495) 783 65 00",
+				"address": "г. Москва, ул. Лесная, 15",
+				"map_link": "dgTDAWHhv6XVIonArf2JOER-v5jyriW7",
+				"another_container": "#side-left",
+				"map_container": "#side-right"
+			})
+		</div>
+		
+		<a href="https://www.google.ru/" class="side__link" target="_blank"></a>
+
+	</article>
+
+	<article class="side side_right" id="side-right">
+		
+		@@include('./components/header.html', {
+			"addclass": "_suschevsky",
+			"lang": true,
+			"about": true,
+				"phone": "+7 (495) 225 82 82",
+				"address": "г. Москва, ул. Сущевский Вал, 74",
+				"map_link": "nluYAgkuD33WRDU-BDdeWeG8vTHS0RGM",
+				"another_container": "#side-right",
+				"map_container": "#side-left"
+		})
+
+		<div class="side__content side__content_suschevsky">
+			@@include('./components/footer.html', {
+				"header": "Холидей Инн Москва Сущевский",
+				"phone": "+7 (495) 225 82 82",
+				"address": "г. Москва, ул. Сущевский Вал, 74",
+				"map_link": "nluYAgkuD33WRDU-BDdeWeG8vTHS0RGM",
+				"another_container": "#side-right",
+				"map_container": "#side-left"
+			})
+		</div>
+
+		<a href="https://www.yandex.ru/" class="side__link" target="_blank"></a>
+
+	</article>
+
+	<article class="side side_bottom">
+		<a href="" class="lang ru">
+			<span class="lang__selected">Русский</span>
+		</a>
+		
+		<div class="content">
+			<h3>О компании</h3>
+
+			<p>Гостиницы находится в собственности ПАО «МОСПРОМСТРОЙ», эксплауатируются ООО «МОСПРОМСТРОЙ ОТЕЛЬ МЕНЕДЖЕМЕНТ» >на основании лицензии от Six Continents Hotels, Inc., под управлением «ИНТЕРСТЕЙТ МЕНЕДЖМЕНТ СЕРВИСЕЗ, ИНК.»</p>
+			<p>Основной государственный регистрационный номер (ОГРН) 1047796558490.</p>
+		</div>
+		
+	</article>
+
+</section>
+
+@@include('./components/scripts.html')

@@ -1,0 +1,26 @@
+@media only screen and (max-width: 640px) {
+	.layout-header {
+		height: auto;
+		padding: 10px 25px;
+
+		&__logo {
+			position: relative;
+			left: auto;
+			top: auto;
+		}
+
+		&__address {
+			width: 100%;
+			position: relative;
+			left: auto;
+			top: auto;
+			clear: both;
+			margin-top: 10px;
+			display: block;
+		}
+	}
+
+	.content {
+		max-width: 100%;
+	}
+}

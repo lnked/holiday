@@ -1,0 +1,90 @@
+.layout-footer {
+	clear: both;
+	position: absolute;
+	right: $push;
+	left: $push;
+	bottom: 50px;
+	z-index: 10;
+	height: $footer-height;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, .8);
+	
+	&__wrapper {
+		padding: 31px 35px 33px 34px;
+	}
+
+	&__header {
+		color: $green-color;
+		font-size: 4.1rem;
+		font-weight: 300;
+		line-height: 3.3rem;
+		margin-bottom: 3rem;
+		display: inline-block;
+		text-decoration: none;
+	}
+
+	&__bottom {
+		clear: both;
+		height: 5.3rem;
+		text-align: center;
+		line-height: 5.8rem;
+	}
+
+	&__item {
+		display: inline-block;
+		vertical-align: middle;
+
+		&_reserve {
+			float: left;
+			height: 5.3rem;
+			padding: 0 4.4rem;
+			background-color: $green-color;
+			border-radius: 5px;
+			color: #fff;
+			font-size: 1.6rem;
+			font-weight: 400;
+			line-height: 5.5rem;
+			text-decoration: none;
+			text-transform: uppercase;
+			transition: background-color $time, color $time;
+
+			&:hover {
+				background-color: lighten($green-color, 5%);
+			}
+		}
+
+		&_phone {
+			color: #000;
+			opacity: 0.89;
+			font-size: 2.7rem;
+			font-weight: 300;
+			line-height: 1;
+			text-decoration: none;
+		}
+
+		&_address {
+			float: right;
+			padding: 0 20px;
+			height: 3.2rem;
+			margin-top: 11px;
+			color: #3d3d3d;
+			font-weight: 400;
+			font-size: 1.5rem;
+			line-height: 3.5rem;
+			text-decoration: none;
+			cursor: pointer;
+			background-color: #000;
+			background-color: rgba(0, 0, 0, .11);
+		}
+
+		&__arrow {
+			line-height: 1;
+			padding-right: 20px;
+			display: inline-block;
+			vertical-align: middle;
+			background: url(../images/arr.png) 100% 2px no-repeat;
+			background-image: url(../images/arr.svg);
+			background-size: 5px 9px;
+		}
+	}
+}

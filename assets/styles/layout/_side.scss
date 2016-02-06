@@ -1,0 +1,76 @@
+.side {
+	width: 50%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	box-sizing: border-box;
+
+	&__map, &__link {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+		opacity: 0;
+	}
+
+	&__map {
+		z-index: 300;
+		background: #fff url(../images/preloader.gif) 50% 50% no-repeat;
+		background-size: 32px 32px;
+		display: none;
+		opacity: 0;
+		transition: opacity $time;
+		
+		&.show {
+			display: block;
+		}
+
+		&.animate {
+			opacity: 1;
+		}
+	}
+	
+	&__link {
+		z-index: 0;
+	}
+
+	&__content {
+		padding: $push;
+		position: relative;
+		height: calc(100% - 100px);
+		background-position: 50% 0;
+		background-size: cover;
+		box-sizing: border-box;
+	
+		&_forestry {
+			background-image: url(../images/ls.jpg);
+		}
+
+		&_suschevsky {
+			background-image: url(../images/rs.jpg);
+		}
+	}
+
+	&_left {
+		background-color: gray;
+		border-right: 4px solid $border-color;
+	}
+
+	&_right {
+		background-color: #999;
+		border-left: 4px solid $border-color;
+	}
+	
+	&_bottom {
+		width: 100%;
+		padding: 30px;
+		clear: both;
+		height: auto;
+		min-height: 0 !important;
+		background-color: #fff;
+		display: none;
+	}
+}

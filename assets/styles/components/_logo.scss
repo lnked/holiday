@@ -1,0 +1,28 @@
+.logo {
+	width: 191px;
+	height: 54px;
+	display: block;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100%;
+
+	&_forestry {
+		background-image: url(../images/forestry-ru.png);
+	}
+
+	&_suschevsky {
+		background-image: url(../images/suschevsky-ru.png);
+	}
+}
+
+.en {
+	.logo {
+		&_forestry {
+			background-image: url(../images/forestry-en.png);
+		}
+		
+		&_suschevsky {
+			background-image: url(../images/suschevsky-en.png);
+		}
+	}
+}
