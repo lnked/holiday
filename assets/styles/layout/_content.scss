@@ -1,8 +1,13 @@
 .content {
 	width: 100%;
 	max-width: 70%;
+	padding-top: 25px;
 	margin: 0 auto;
 	text-align: center;
+
+	&.is-hidden {
+		display: none;
+	}
 
 	h3 {
 		color: #363636;

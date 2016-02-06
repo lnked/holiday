@@ -3,6 +3,17 @@
 		overflow: auto;
 	}
 
+	.about {
+		&__border {
+			top: 69px;
+		}
+		
+		&__content {
+			height: 280px;
+			overflow: scroll;
+		}
+	}
+
 	.layout-wrapper {
 		min-height: 100%;
 		height: auto;
@@ -47,11 +58,11 @@
 	}
 
 	.side {
-		min-height: 400px;
+		eight: 400px;
 		border: 0;
 
 		&__content {
-			min-height: 400px;
+			height: 400px;
 		}
 
 		&_left, &_right {

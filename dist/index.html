@@ -62,8 +62,11 @@
 </head>
 <body>
 
-<section class="layout-wrapper" itemprop="mainContentOfPage">
-	
+<section class="layout-wrapper" id="layout-wrapper" itemprop="mainContentOfPage">
+	<article class="close" id="close-map">
+		<a href="#" class="close__backuri js-backuri">Вернуться назад</a>
+	</article>
+
 	<article class="side side_left" id="side-left">
 		
 		<header class="layout-header js-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
@@ -163,18 +166,18 @@
 
 	</article>
 
-	<article class="side side_bottom">
-		<a href="" class="lang ru">
+	<article class="side side_bottom" id="side-bottom">
+		<a href="#about-content" class="lang ru js-trigger-about">
 			<span class="lang__selected">Русский</span>
 		</a>
 		
-		<div class="content">
+		<div class="content is-hidden" id="about-content">
 			<h3>О компании</h3>
 
 			<p>Гостиницы находится в собственности ПАО «МОСПРОМСТРОЙ», эксплауатируются ООО «МОСПРОМСТРОЙ ОТЕЛЬ МЕНЕДЖЕМЕНТ» >на основании лицензии от Six Continents Hotels, Inc., под управлением «ИНТЕРСТЕЙТ МЕНЕДЖМЕНТ СЕРВИСЕЗ, ИНК.»</p>
 			<p>Основной государственный регистрационный номер (ОГРН) 1047796558490.</p>
 		</div>
-		
+
 	</article>
 
 </section>

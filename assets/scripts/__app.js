@@ -4,11 +4,24 @@
 	window.body = $('body');
 	window._this = null;
 
+	var ww = $(window).width(), wh = $(window).height(), sl = $('#side-left'), sr = $('#side-right'), sb = $('#side-bottom'), height = 0, result = 0, debounce = null;
+
 	$.app = {
 		
 		initTrigger: function()
 		{
 			var trigger, wrapper, container, debounce;
+
+			body.on('click', '.js-trigger-about', function(e){
+				e.preventDefault();
+
+				if ($($(this).attr('href')).length)
+				{
+					$($(this).attr('href')).toggleClass('is-hidden');
+				}
+
+				return !1;
+			});
 
 			body.on('click', function(e){
 				if (!$(e.target).closest('.about').length && $('.js-about.open').length)
@@ -67,6 +80,12 @@
 			}
 
 			$('.js-backuri.active').removeClass('active');
+
+			$('#close-map.open').removeClass('animate');
+			
+			setTimeout(function(){
+				$('#close-map.open').removeClass('open');
+			}, 350);
 		},
 
 		initMap: function()
@@ -86,7 +105,14 @@
 				{
 					var container, div, script;
 
-					container = $($(this).data('container'));
+					if (ww <= 960)
+					{
+						container = $('#layout-wrapper');
+					}
+					else
+					{
+						container = $($(this).data('container'));
+					}					
 
 					if (!container.find('.side__map').length)
 					{
@@ -118,14 +144,69 @@
 							container.find('.side__map').addClass('animate');
 						}, 10);
 					}
+
+					if (ww <= 960)
+					{
+						$('#close-map').addClass('open');
+						
+						setTimeout(function(){
+							$('#close-map').addClass('animate');
+						}, 10);
+					}
 				}
 			});
+		},
+
+		initResize: function()
+		{
+			height += sl.outerHeight();
+			height += sr.outerHeight();
+
+			if (sb.is(':visible'))
+			{
+				height += sb.outerHeight();
+			}
+			
+			if (ww <= 960)
+			{
+				if (height > wh)
+				{
+					if (sb.is(':visible'))
+					{
+						result = ((wh - sb.outerHeight()) / 2) - 8;
+					}
+					else
+					{
+						result = (wh / 2) - 4;
+					}
+
+					$('#side-left').height(result);
+					$('#side-right').height(result);
+					
+					$('#side-left').find('.side__content').height(result);
+					$('#side-right').find('.side__content').height(result);
+
+					$('#side-right').find('.about__content').height(result - 165);
+				}
+			}
 		},
 
 		init: function()
 		{
 			_this = this;
-			
+
+			_this.initResize();
+
+			$(window).on('resize', function(){
+				clearTimeout(debounce);
+
+				debounce = setTimeout(function(){
+
+					_this.initResize();
+
+				}, 50);
+			});
+
 			this.initTrigger();
 			this.initMap();
 		}

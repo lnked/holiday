@@ -137,21 +137,6 @@ if (gutil.env.build === true)
     is.build = true;
 }
 
-// var config = {
-//     port: 9005,
-//     devBaseUrl: 'http://localhost',
-//     paths: {
-//         html: './src/*.html',
-//         js: './src/**/*.js',
-//         css: [
-//             'node_modules/bootstrap/dist/css/bootstrap.min.css',
-//             'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
-//         ],
-//         dist: './dist',
-//         mainJs: './src/main.js'
-//     }
-// };
-
 gulp.task('webserver', function() {
     gulp.src(app)
         .pipe(webserver({
@@ -211,7 +196,7 @@ gulp.task('html', function() {
                 "id-unique": true,
                 "tag-pair": false,
                 "attr-no-duplication": true,
-                "spec-char-escape": true,
+                "spec-char-escape": false,
                 "src-not-empty": false
             })
         ))
